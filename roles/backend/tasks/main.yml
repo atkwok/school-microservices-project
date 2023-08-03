@@ -9,14 +9,14 @@
 - name: Delete previous backend files
   file:
     state: absent
-    path: "{{ server_dir }}/backend"
+    path: "{{ server_dir }}/school-data-service"
 
 #
 # Copy `./backend` folder to the remote server.
 #
 - name: Copy a new backend files
   synchronize:
-    src: ./backend
+    src: ./school-data-service
     dest: "{{ server_dir }}"
     rsync_opts:
       - "--exclude=.git,.github,build,*.md"

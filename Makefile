@@ -5,7 +5,7 @@
 .PHONY: test run build
 
 FRONTEND_PATH = $(PWD)/frontend
-BACKEND_PATH = $(PWD)/backend
+BACKEND_PATH = $(PWD)/school-data-service
 
 test:
 	@if [ -d "$(FRONTEND_PATH)" ]; then cd $(FRONTEND_PATH) && npm run test; fi

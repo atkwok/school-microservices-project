@@ -6,7 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/create-go-app/fiber-go-template/pkg/utils"
+	"school-data-service/pkg/utils"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
 	"github.com/joho/godotenv"

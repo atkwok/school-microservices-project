@@ -1,8 +1,9 @@
 package routes
 
 import (
-	"github.com/create-go-app/fiber-go-template/app/controllers"
-	"github.com/create-go-app/fiber-go-template/pkg/middleware"
+	"school-data-service/app/controllers"
+	"school-data-service/pkg/middleware"
+
 	"github.com/gofiber/fiber/v2"
 )
 

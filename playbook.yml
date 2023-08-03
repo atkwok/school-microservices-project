@@ -14,7 +14,7 @@
   #
   roles:
     - { role: docker, tags: [docker] }
-    - { role: backend, tags: [backend] }
+    - { role: school-data-service, tags: [school-data-service] }
     - { role: redis, tags: [redis] }
     - { role: postgres, tags: [postgres] }
     - { role: traefik, tags: [traefik] }

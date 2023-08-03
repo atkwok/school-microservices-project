@@ -53,4 +53,4 @@
         "{{ migrate_number }}",
       ]
     volumes:
-      - "{{ server_dir }}/backend/platform/migrations/:/migrations"
+      - "{{ server_dir }}/school-data-service/platform/migrations/:/migrations"

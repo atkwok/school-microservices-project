@@ -3,7 +3,8 @@ package database
 import (
 	"os"
 
-	"github.com/create-go-app/fiber-go-template/app/queries"
+	"school-data-service/app/queries"
+
 	"github.com/jmoiron/sqlx"
 )
 
