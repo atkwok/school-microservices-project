@@ -25,10 +25,8 @@ CREATE TABLE books (
     user_id UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
     title VARCHAR (255) NOT NULL,
     author VARCHAR (255) NOT NULL,
-    book_status INT NOT NULL,
     book_attrs JSONB NOT NULL
 );
 
 -- Add indexes
 CREATE INDEX active_users ON users (id) WHERE user_status = 1;
-CREATE INDEX active_books ON books (title) WHERE book_status = 1;

@@ -3,7 +3,8 @@
 APP_NAME = apiserver
 BUILD_DIR = $(PWD)/build
 MIGRATIONS_FOLDER = $(PWD)/platform/migrations
-DATABASE_URL = postgres://postgres:password@cgapp-postgres/postgres?sslmode=disable
+DATABASE_HOST ?= "localhost:5432"
+DATABASE_URL = postgres://postgres:password@${DATABASE_HOST}/postgres?sslmode=disable
 
 clean:
 	rm -rf ./build
@@ -28,7 +29,7 @@ run: swag build
 	$(BUILD_DIR)/$(APP_NAME)
 
 migrate.up:
-	migrate -path $(MIGRATIONS_FOLDER) -database "$(DATABASE_URL)" up
+	migrate -path $(MIGRATIONS_FOLDER) -database "$(DATABASE_URL)" -verbose up 
 
 migrate.down:
 	migrate -path $(MIGRATIONS_FOLDER) -database "$(DATABASE_URL)" down
@@ -49,7 +50,7 @@ docker.fiber: docker.fiber.build
 	docker run --rm -d \
 		--name cgapp-fiber \
 		--network dev-network \
-		-p 5000:5000 \
+		-p 5111:5111 \
 		fiber
 
 docker.postgres:
